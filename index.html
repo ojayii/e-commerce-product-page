@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>SNEAKERS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -40,7 +41,12 @@
     <!-- <span class="navbar__cart-toggle-img"></span> -->
     <button class="navbar__profile-btn"></button>
 
-    <!-- <div class="cart-basket"></div> -->
+    <div class="cart">
+      <span>Cart</span>
+      <div class="cart-basket">
+        <span class="empty-state">Your cart is empty</span>
+      </div>
+    </div>
   </nav>
 
   <main>
@@ -59,10 +65,51 @@
         <label for="product-image-4"></label>
 
         <button class="product-item__images__preview"></button>
+
+
       </div>
 
+      <div class="light-box">
+        
+        <div class="swiper product-item__images">
+          <input class="product-item__images__thumbnail" type="radio" name="product-image-light-box"
+            id="product-image-light-box-1">
+          <label for="product-image-light-box-1"></label>
+
+          <input class="product-item__images__thumbnail" type="radio" name="product-image-light-box"
+            id="product-image-light-box-2">
+          <label for="product-image-light-box-2"></label>
+
+          <input class="product-item__images__thumbnail" type="radio" name="product-image-light-box"
+            id="product-image-light-box-3">
+          <label for="product-image-light-box-3"></label>
+
+          <input class="product-item__images__thumbnail" type="radio" name="product-image-light-box"
+            id="product-image-light-box-4">
+          <label for="product-image-light-box-4"></label>
+
+          <div class="swiper-wrapper product-item__images__preview">
+            <!-- <button class="product-item__images__preview"></button> -->
+            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="swiper-slide">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="" class="swiper-slide">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="" class="swiper-slide">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="" class="swiper-slide">
+          </div>
+
+          <button class="light-box__close">
+            <img src="./images/icon-close.svg" alt="">
+          </button>
+          <button class="swiper-button-prev navigation">
+            <img src="./images/icon-previous.svg" alt="">
+          </button>
+          <button class="swiper-button-next navigation next">
+            <img src="./images/icon-next.svg" alt="">
+          </button>
+        </div>
+      </div>
+      
       <section class="product-item__info">
-        <span>Sneaker Company</span>
+        <span>SNEAKER COMPANY</span>
         <h1>Fall Limited Edition Sneakers</h1>
         <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
           durable rubber outer sole, they'll withstand everything the weather can offer.</p>
@@ -71,20 +118,26 @@
           <span>50%</span>
           <span>$250.00</span>
         </div>
-        <div>
-          <button>Add to cart</button>
+        <div class="add-to-cart">
+          <div class="counter-container">
+            <button class="decrement-btn">-</button>
+            <input type="text" class="counter-value" value="0" readonly>
+            <button class="increment-btn">+</button>
+          </div>
+
+          <button> <img src="./images/icon-cart.svg"> Add to cart</button>
         </div>
       </section>
     </div>
   </main>
-  
+
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/ojayii">Ojay</a>.
   </div>
 
-  <script src="./main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
