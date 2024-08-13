@@ -11,8 +11,7 @@ let cartData;
 const checkoutBtn = document.querySelector(".cart>button");
 const cartCount = document.querySelector('.cart-count');
 
-
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.mjs';
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
 decrementBtn.addEventListener("click", () => {
   const value = parseInt(counterValue.value, 10);

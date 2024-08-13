@@ -48,7 +48,7 @@ html {
     display: flex;
     align-items: center;
     gap: 4%;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid var(--light-grayish-blue);
     position: relative;
 }
 
@@ -177,6 +177,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: min(0.5vw);
 }
 
 .cart-item>.thumbnail {
@@ -257,23 +258,43 @@ main {
     flex-grow: 1;
 }
 
+.product-item__images__thumbnail:checked+label,
+.product-item__images__thumbnail+label:hover {
+    position: relative;
+}
+
+.product-item__images__thumbnail:checked+label {
+    outline: 2px solid var(--orange);
+}
+
+.product-item__images__thumbnail:checked+label::after,
+.product-item__images__thumbnail+label:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(172, 129, 49, 0.603);
+}
+
 .product-item__images__thumbnail:nth-child(1):checked~.product-item__images__preview {
-    background: url(./images/image-product-1-thumbnail.jpg);
+    background: url(./images/image-product-1.jpg);
     background-size: cover;
 }
 
 .product-item__images__thumbnail:nth-child(3):checked~.product-item__images__preview {
-    background: url(./images/image-product-2-thumbnail.jpg);
+    background: url(./images/image-product-2.jpg);
     background-size: cover;
 }
 
 .product-item__images__thumbnail:nth-child(5):checked~.product-item__images__preview {
-    background: url(./images/image-product-3-thumbnail.jpg);
+    background: url(./images/image-product-3.jpg);
     background-size: cover;
 }
 
 .product-item__images__thumbnail:nth-child(7):checked~.product-item__images__preview {
-    background: url(./images/image-product-4-thumbnail.jpg);
+    background: url(./images/image-product-4.jpg);
     background-size: cover;
 }
 
@@ -302,7 +323,7 @@ main {
     width: 100%;
     height: clamp(20rem, 35vw, 27rem);
     max-height: 70vh;
-    background: url(./images/image-product-1.jpg);
+    /* background: url(./images/image-product-1.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -460,6 +481,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 30;
 }
 
 .light-box>.product-item__images {
@@ -604,6 +626,7 @@ main {
         width: 100%;
         margin-bottom: 1.5rem;
         scale: 1;
+        z-index: 9;
     }
 
     .light-box>.product-item__images {
