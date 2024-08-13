@@ -445,7 +445,7 @@ main {
 }
 
 .add-to-cart>button:active,
-.cart>button {
+.cart>button:active {
     scale: 0.95;
 }
 

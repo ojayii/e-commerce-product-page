@@ -51,6 +51,8 @@ lightBoxClose.addEventListener("click", () => {
 
 const deleteItem = (e) => {
   cartItems = cartItems.filter((item) => item.id != e.target.closest("button").id);
+  count = 0;
+  cartCount.innerHTML= count;
   updateCart();
 };
 
@@ -87,7 +89,7 @@ let count = 0;
 const filterCartItems = () => {
   if (!cartItems.length) {
     cartItems.push(cartData);
-    count += 1;
+    count = parseInt(cartData.itemUnits, 10);
     cartCount.innerHTML= count;
   } else {
     cartItems.forEach((item) => {
