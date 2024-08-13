@@ -18,7 +18,7 @@
   <nav class="navbar">
     <input type="checkbox" id="nav-toggle">
     <label for="nav-toggle"></label>
-    <a class="navbar__logo-wrapper" href="#"><img src="./images/logo.svg" alt=""></a>
+    <a class="navbar__logo-wrapper" href="#"><img src="./images/logo.svg" alt="img"></a>
     <ul class="navbar__nav-links">
       <li>
         <a href="">Collections</a>
@@ -43,9 +43,8 @@
 
     <div class="cart">
       <span>Cart</span>
-      <div class="cart-basket">
-        <span class="empty-state">Your cart is empty</span>
-      </div>
+      <div class="cart-basket"></div>
+      <button>Checkout</button>
     </div>
   </nav>
 
@@ -53,7 +52,9 @@
     <div class="product-item">
       <div class="product-item__images">
         <input class="product-item__images__thumbnail" type="radio" name="product-image" id="product-image-1">
-        <label for="product-image-1"></label>
+        <label for="product-image-1">
+          <img src="./images/image-product-1-thumbnail.jpg" style="display: none;">
+        </label>
 
         <input class="product-item__images__thumbnail" type="radio" name="product-image" id="product-image-2">
         <label for="product-image-2"></label>
@@ -65,12 +66,10 @@
         <label for="product-image-4"></label>
 
         <button class="product-item__images__preview"></button>
-
-
       </div>
 
       <div class="light-box">
-        
+
         <div class="swiper product-item__images">
           <input class="product-item__images__thumbnail" type="radio" name="product-image-light-box"
             id="product-image-light-box-1">
@@ -89,43 +88,42 @@
           <label for="product-image-light-box-4"></label>
 
           <div class="swiper-wrapper product-item__images__preview">
-            <!-- <button class="product-item__images__preview"></button> -->
-            <img src="./images/image-product-1-thumbnail.jpg" alt="" class="swiper-slide">
-            <img src="./images/image-product-2-thumbnail.jpg" alt="" class="swiper-slide">
-            <img src="./images/image-product-3-thumbnail.jpg" alt="" class="swiper-slide">
-            <img src="./images/image-product-4-thumbnail.jpg" alt="" class="swiper-slide">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="img" class="swiper-slide">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="img" class="swiper-slide">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="img" class="swiper-slide">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="img" class="swiper-slide">
           </div>
 
           <button class="light-box__close">
-            <img src="./images/icon-close.svg" alt="">
+            <img src="./images/icon-close.svg" alt="img">
           </button>
           <button class="swiper-button-prev navigation">
-            <img src="./images/icon-previous.svg" alt="">
+            <img src="./images/icon-previous.svg" alt="img">
           </button>
           <button class="swiper-button-next navigation next">
-            <img src="./images/icon-next.svg" alt="">
+            <img src="./images/icon-next.svg" alt="img">
           </button>
         </div>
       </div>
-      
+
       <section class="product-item__info">
         <span>SNEAKER COMPANY</span>
         <h1>Fall Limited Edition Sneakers</h1>
         <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
           durable rubber outer sole, they'll withstand everything the weather can offer.</p>
         <div class="product-item__info__price-wrapper">
-          <span>$125.00</span>
+          <span>$<span class="price">125.00</span></span>
           <span>50%</span>
           <span>$250.00</span>
         </div>
         <div class="add-to-cart">
           <div class="counter-container">
             <button class="decrement-btn">-</button>
-            <input type="text" class="counter-value" value="0" readonly>
+            <input type="text" class="counter-value" value="1" readonly>
             <button class="increment-btn">+</button>
           </div>
 
-          <button> <img src="./images/icon-cart.svg"> Add to cart</button>
+          <button class="add-btn"> <img src="./images/icon-cart.svg"> Add to cart</button>
         </div>
       </section>
     </div>
