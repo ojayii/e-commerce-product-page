@@ -9,6 +9,7 @@ const cartElement = document.querySelector(".cart-basket");
 let cartItems = [];
 let cartData;
 const checkoutBtn = document.querySelector(".cart>button");
+const cartCount = document.querySelector('.cart-count');
 
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.mjs';
@@ -40,6 +41,7 @@ const swiper = new Swiper('.swiper', {
 lightBoxToggle.addEventListener("click", () => {
   lightBox.style.transition = "scale 300ms ease-in-out";
   lightBox.style.scale = "1";
+  // console.log("clicked")
 });
 
 lightBoxClose.addEventListener("click", () => {
@@ -60,7 +62,7 @@ const updateCart = () => {
           <img src="${item.thumbnailSrc}" alt="Item thumbnail" class="thumbnail">
           <div class="cart-item__info">
             <p>${item.itemTitle}</p>
-            <span>$<span class="cart-item__price">${item.itemPrice}</span> x <span class="cart-item__units">${item.itemUnits}</span> <strong>$${item.itemTotal}</strong></span>
+            <span>$<span class="cart-item__price">${item.itemPrice}</span> x <span class="cart-item__units">${item.itemUnits}</span> <strong>$${item.itemTotal.toFixed(2)}</strong></span>
           </div>
           <button class="cart-item__detete-btn" id=${item.id}>
             <img src="./images/icon-delete.svg" alt="">
@@ -69,18 +71,24 @@ const updateCart = () => {
       })
       .join("");
     checkoutBtn.style.display= 'block';
+    cartCount.style.display= 'block';
   } else {
     cartElement.innerHTML = `<span class="empty-state">Your cart is empty</span>`;
     checkoutBtn.style.display= '';
+    cartCount.style.display= '';
   }
 
 };
 
 updateCart();
 
+let count = 0;
+
 const filterCartItems = () => {
   if (!cartItems.length) {
     cartItems.push(cartData);
+    count += 1;
+    cartCount.innerHTML= count;
   } else {
     cartItems.forEach((item) => {
       if (item.id === cartData.id) {
@@ -88,9 +96,12 @@ const filterCartItems = () => {
           parseInt(item.itemUnits, 10) + parseInt(cartData.itemUnits, 10);
         item.itemTotal =
           parseInt(item.itemPrice, 10) * parseInt(item.itemUnits, 10);
-
+        count = parseInt(count, 10) + parseInt(cartData.itemUnits, 10);
+        cartCount.innerHTML= count;
       } else {
         cartItems.push(cartData);
+        count += 1;
+        cartCount.innerHTML= count;
       }
     });
   }
