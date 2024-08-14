@@ -145,7 +145,7 @@ html {
     top: clamp(4rem, 6.6vw, 6rem);
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0.4rem 20px 0 var(--grayish-blue);
+    box-shadow: 0 0.4rem 20px 0 hsl(220deg 4.98% 23.25% / 50%);
     min-width: 280px;
     z-index: 10;
     scale: 0;

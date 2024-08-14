@@ -10,6 +10,7 @@ let cartItems = [];
 let cartData;
 const checkoutBtn = document.querySelector(".cart>button");
 const cartCount = document.querySelector('.cart-count');
+let count = 0;
 
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
@@ -82,8 +83,6 @@ const updateCart = () => {
 };
 
 updateCart();
-
-let count = 0;
 
 const filterCartItems = () => {
   if (!cartItems.length) {
